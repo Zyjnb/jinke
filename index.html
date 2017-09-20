@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>三少爷的剑</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <style id="styleId">
+        .xz{
+            width: 300px;
+            height: 250px;
+            margin: 10px auto;
+            perspective: 2000px;
+        }
+        .xz ul{
+            width: 300px;
+            height: 250px;
+            position: relative;
+            transform-style: preserve-3d;
+
+        }
+        .donghua{
+            animation:move 20s infinite linear;
+        }
+        .xz ul li{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        @keyframes move {
+            0%{
+                transform:rotateY(0deg) ;
+            }
+            100%{
+                transform:rotateY(360deg) ;
+            }
+        }
+        .zyj{
+            width: 700px;
+            height: 520px;
+            margin-left: 400px;
+            top: 300px;
+            position: absolute;
+            animation:movetwo 0.5s linear;
+            transition: transform 0.5s linear,opacity 0.5s;
+
+        }
+        .zyj:hover{
+            transform:scale(1.01);
+            opacity: 0.9;
+        }
+        @keyframes movetwo {
+            0%{
+                transform:scale(0.5) ;
+            }
+            100%{
+                transform:scale(1) ;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="zd e">
+    <div class="one w">
+        <img src="image/1232.jpg" alt="" class="imgas"/>
+        <div class="top w">
+              <div class="logo"></div>
+              <div class="top-nav">
+                  <div class="top-nav-xz"></div>
+                  <div class="top-nav-ios"></div>
+                  <div class="top-nav-az"></div>
+                  <div class="top-nav-ewm">
+                      <img src="image/code_7c985a9.png" alt="" title="三少爷的剑官方手游"/>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <div class="content w" >
+        <img src="image/h5-title_6df8842.png" alt=""/>
+    </div>
+    <div class="center">
+        <div class="center-one c">
+            <img src="image/fuili1_7c77290.png" alt=""/>
+        </div>
+        <div class="center-two c">
+            <img src="image/fuli2_598dda1.png" alt=""/>
+        </div>
+        <div class="center-three c">
+            <img src="image/fuli3_989c163.png" alt=""/>
+        </div>
+        <div class="center-four c">
+            <img src="image/fuli4_68cc88e.png" alt=""/>
+        </div>
+    </div>
+    <div class="line w">
+        <img src="image/h5-title3_34c2b8c.png" alt=""/>
+    </div>
+    <div class="footer">
+        <div class="footer-top">
+        <div class="xz">
+            <ul >
+                <li><img src="image/005.jpg" alt="" width="200" height="200" /></li>
+                <li><img src="image/006.jpg" alt="" width="200" height="200" /></li>
+                <!--<li><img src="image/007.jpg" alt="" width="200" height="200" /></li>-->
+                <li><img src="image/001.jpg" alt="" width="200" height="200" /></li>
+                <li><img src="image/002.jpg" alt="" width="200" height="200" /></li>
+                <li><img src="image/003.jpg" alt="" width="200" height="200" /></li>
+                <li><img src="image/004.jpg" alt="" width="200" height="200" /></li>
+                <!--<li><img src="image/005.jpg" alt="" width="200" height="200" /></li>-->
+                <!--<li><img src="image/006.jpg" alt="" width="200" height="200" /></li>-->
+                <li><img src="image/007.jpg" alt="" width="200" height="200" /></li>
+                <li><img src="image/008.jpg" alt="" width="200" height="200" /></li>
+                <li><img src="image/002.jpg" alt="" width="200" height="200" /></li>
+            </ul>
+        </div>
+        <div class="footer-center">
+            <span style="position: absolute;right: -100px;bottom: 1px;font-size: 50px;font-family:楷体 ">点<br>燃<br>你<br>心<br>中<br>的<br>江<br>湖<br>梦</span>
+            <span style="position: absolute;left: -100px;bottom: 90px;font-size: 50px;font-family:楷体 ">有<br>你<br>的<br>地<br>方<br>才<br>算<br>江<br>湖</span>
+        </div>
+        </div>
+        <div class="line-three w">
+            <img src="image/h5-title3_96d2584.png" alt=""/>
+        </div>
+        <div class="box">
+            <div class="box-nav">
+                <div class="box-nav-one y"></div>
+                <div class="box-nav-two y"></div>
+                <div class="box-nav-three y"></div>
+                <div class="box-nav-four y"></div>
+            </div>
+            <div class="box-center show">
+                <img src="image/title1_5c95117.png" alt="" class="show-one"/>
+                <img src="image/bg1_1e25483.png" alt="" class="show-two"/>
+                <img src="image/person1_4d2efd3.png" alt="" class="show-three"/>
+            </div>
+        </div>
+        <div class="zdb">
+            <img src="image/789.PNG" alt="" width="1500px"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var ostyle=document.querySelector("#styleId")
+    var olis=document.getElementsByClassName("xz")[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
+//    console.log(olis)
+    for(var i=0;i<olis.length;i++){
+        (function(index){
+            setTimeout(function(){
+                ostyle.innerHTML+=".xz ul li:nth-child("+(index+1)+"){" +
+                        "transform: rotateY("+(360-40*index)+"deg"+")" +
+                        "translateZ(400px);" +
+                        "transition:transform 5s;}"
+            },100*(index+1))
+        })(i)
+//        console.log(olis[i].getElementsByTagName("img"))
+        olis[i].onclick=function(){
+//            alert(123)
+//            console.log(this.src)
+//            two.src=""
+            var one=this.getElementsByTagName("img")[0].src;
+            var two=document.createElement("img");
+            two.src=one;
+            two.className="zyj"
+            document.getElementsByClassName("footer")[0].appendChild(two);
+
+        }
+    }
+</script>
+<script src="js/jquery.js"></script>
+<script>
+    var aer=$(".xz").find("ul")
+    aer.mouseover(function(){
+        aer.addClass("donghua")
+    })
+</script>
+<script>
+    var one=document.getElementsByClassName("box-nav-one")[0];
+    var a=document.getElementsByClassName("box-center")[0].getElementsByTagName("img");
+    console.log(a)
+    one.onclick=function(){
+        a[0].className
+    }
+    var two=document.getElementsByClassName("box-nav-two")[0];
+    var three=document.getElementsByClassName("box-nav-three")[0];
+    var four=document.getElementsByClassName("box-nav-four")[0];
+</script>
+</body>
+</html>
